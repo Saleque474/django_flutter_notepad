@@ -42,15 +42,3 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-
-
-*env/
-*ios/
-*linux/
-*macos/
-*test/
-*windows/
-*web/
-__pycache__
-**/__pycache__/**
-*00*.py

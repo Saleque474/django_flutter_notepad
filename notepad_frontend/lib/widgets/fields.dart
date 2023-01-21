@@ -6,11 +6,13 @@ class CustomField extends StatelessWidget {
   final String iconUrl;
   final String hint;
   TextEditingController? controller;
+  final bool obsecure;
 
   CustomField({
     this.controller,
     this.iconUrl = '',
     this.hint = '',
+    this.obsecure = false,
   });
 
   @override
@@ -43,6 +45,7 @@ class CustomField extends StatelessWidget {
           ),
           Expanded(
             child: TextFormField(
+              obscureText: obsecure,
               controller: controller,
               decoration: InputDecoration.collapsed(
                 hintText: hint,

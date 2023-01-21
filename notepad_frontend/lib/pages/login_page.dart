@@ -74,7 +74,7 @@ class _SignInPageState extends State<SignInPage> {
                   );
                 },
                 child: Text(
-                  "Lupa Password?",
+                  "Forgot Password?",
                   style: whiteTextStyle.copyWith(
                     fontSize: 16,
                     fontWeight: semiBold,
@@ -132,7 +132,7 @@ class _SignInPageState extends State<SignInPage> {
                     );
                   },
                   child: Text(
-                    "Belum punya akun? Daftar",
+                    "Don't have an account? Register now.",
                     style: whiteTextStyle.copyWith(
                       fontSize: 16,
                       fontWeight: semiBold,

@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     
     # local app
     'user_app',
+    'note_app',
 ]
 
 SITE_ID = 1

@@ -13,4 +13,4 @@ class User(AbstractUser):
     profile_picture=ResizedImageField(upload_to=upload_to,null=True,blank=True)
 
     def __str__(self) -> str:
-        return str(self.id)
+        return self.nickname+" : "+str(self.id )

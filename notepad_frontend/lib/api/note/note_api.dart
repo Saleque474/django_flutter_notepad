@@ -42,3 +42,51 @@ Future<List<Note>> getNotes(User user) async {
   print(notes);
   return notes;
 }
+
+Future<Note?> getNote(User user, int noteId) async {
+  var uri = Uri.parse(noteEndpoint + "deleteUpdateNote/$noteId/");
+
+  var res = await http.get(uri, headers: {
+    'Authorization': ' Token ${user.token}',
+  });
+  // print(res.body);
+  // print(json);
+  if (res.statusCode == 200) {
+    var json = jsonDecode(res.body);
+
+    return Note.fromJson(json);
+  }
+  return null;
+}
+
+Future<bool> updateNote(User user, Note note) async {
+  var uri = Uri.parse(noteEndpoint + "deleteUpdateNote/${note.id}/");
+
+  var res = await http.put(uri, body: note.toJson(), headers: {
+    'Authorization': ' Token ${user.token}',
+  });
+  // print(res.body);
+  // print(json);
+  if (res.statusCode == 200) {
+    // var json = jsonDecode(res.body);
+
+    return true;
+  }
+  return false;
+}
+
+Future<bool> deleteNote(User user, int noteID) async {
+  var uri = Uri.parse(noteEndpoint + "deleteUpdateNote/${noteID}/");
+
+  var res = await http.delete(uri, headers: {
+    'Authorization': ' Token ${user.token}',
+  });
+  // print(res.body);
+  // print(json);
+  if (res.statusCode == 200 || res.statusCode == 204) {
+    // var json = jsonDecode(res.body);
+
+    return true;
+  }
+  return false;
+}

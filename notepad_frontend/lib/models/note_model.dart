@@ -17,6 +17,14 @@ class Note {
       json["note"],
     );
   }
+  Map<String, String> toJson() {
+    return {
+      "id": "$id",
+      "author": "${author.id}",
+      "title": title,
+      "note": note,
+    };
+  }
 }
 
 class Author {

@@ -1,0 +1,4 @@
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans %}Please Confirm Your email to sign in to SimpleEngineering.{% endblocktrans %}
+{% endautoescape %}
